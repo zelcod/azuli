@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azulì — Versailles</title>
+<meta name="description" content="Azulì, restaurant gastronomique méditerranéen à Versailles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0D0C0A}
+a{color:#D4B26A;text-decoration:none}a:hover{color:#EBD49B}
+.az-link{position:relative;transition:color .3s ease}
+.az-link::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:#D4B26A;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.az-link:hover{color:#D4B26A !important}
+.az-link:hover::after{transform:scaleX(1);transform-origin:left}
+.az-btn{transition:transform .35s ease,box-shadow .35s ease,background-color .35s ease}
+.az-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(212,178,106,.35);background-color:#E6CD92 !important}
+.az-ghost{transition:border-color .35s ease,color .35s ease,background-color .35s ease}
+.az-ghost:hover{border-color:#D4B26A !important;color:#D4B26A !important;background-color:rgba(212,178,106,.08) !important}
+.az-outline-gold{transition:background-color .35s ease,color .35s ease}
+.az-outline-gold:hover{background-color:#D4B26A !important;color:#0D0C0A !important}
+.az-arrow svg{transition:transform .35s ease}
+.az-arrow:hover svg{transform:translateX(8px)}
+.az-logo span{transition:letter-spacing .6s cubic-bezier(.2,.7,.2,1),color .4s ease}
+.az-logo:hover span:first-child{letter-spacing:.4em !important;color:#D4B26A}
+.az-frame{transition:border-color .4s ease}
+.az-frame:hover{border-color:#D4B26A !important}
+.az-frame img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s ease}
+.az-frame:hover img{transform:scale(1.06)}
+.az-card{cursor:pointer}
+.az-card img{filter:brightness(.85);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s ease}
+.az-card:hover img{transform:scale(1.08);filter:brightness(1)}
+.az-card .az-media{transition:border-color .4s ease}
+.az-card:hover .az-media{border-color:#D4B26A !important}
+.az-card h3{transition:color .35s ease}
+.az-card:hover h3{color:#D4B26A}
+.az-card .az-num{transition:transform .5s ease}
+.az-card:hover .az-num{transform:translateY(6px)}
+.az-pill{transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.az-pill:hover{background-color:#D4B26A !important;color:#0D0C0A !important;border-color:#D4B26A !important}
+.az-item h3{transition:color .35s ease,transform .35s ease}
+.az-item:hover h3{color:#D4B26A;transform:translateX(6px)}
+.az-item .az-dots{transition:border-color .35s ease}
+.az-item:hover .az-dots{border-color:#D4B26A !important}
+.az-slot{transition:transform .25s ease,border-color .25s ease}
+.az-slot:hover{transform:translateY(-2px);border-color:#D4B26A !important}
+input,select,textarea{transition:border-color .3s ease}
+input:hover,select:hover,textarea:hover{border-color:#D4B26A !important}
+@keyframes azKen{from{transform:scale(1.1)}to{transform:scale(1)}}
+.az-hero-img{animation:azKen 10s ease-out both}
+@keyframes azRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.az-rise{animation:azRise 1.2s .25s cubic-bezier(.2,.7,.2,1) both}
+.az-header{transition:background-color .5s ease}
+.az-header nav{transition:padding .5s cubic-bezier(.2,.7,.2,1)}
+.az-header.az-scrolled{background-color:rgba(13,12,10,.82) !important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.az-header.az-scrolled nav{padding-top:12px !important;padding-bottom:12px !important}
+.az-js .az-reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.az-js .az-reveal.is-in{opacity:1;transform:none}
+.az-js .az-curtain{clip-path:inset(0 0 100% 0);transition:clip-path 1.5s cubic-bezier(.7,0,.2,1),border-color .4s ease}
+.az-js .az-curtain.is-in{clip-path:inset(0 0 0 0)}
+.az-line-l{transform-origin:right}.az-line-r{transform-origin:left}
+.az-js .az-line{transform:scaleX(0);transition:transform 1.8s cubic-bezier(.7,0,.2,1)}
+.az-js .az-line.is-in{transform:scaleX(1)}
+.az-js .az-d1{transition-delay:.12s}.az-js .az-d2{transition-delay:.26s}.az-js .az-d3{transition-delay:.4s}
+.az-cue{transition:color .3s ease}.az-cue:hover{color:#D4B26A !important}
+.az-cue-line::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:#D4B26A;animation:azDrip 2.4s cubic-bezier(.7,0,.3,1) infinite}
+@keyframes azDrip{from{top:-50%}to{top:100%}}
+@keyframes azMarq{to{transform:translateX(-50%)}}
+.az-marquee-track{animation:azMarq 70s linear infinite}
+.az-marquee:hover .az-marquee-track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div class="az-top" style="background: #0D0C0A; color: #ECE4D3; font-family: 'Jost', system-ui, sans-serif; font-weight: 300; width: 100%; min-width: 0">
+<div class="az-progress" aria-hidden="true" style="position: fixed; top: 0; left: 0; right: 0; height: 2px; background: #D4B26A; transform: scaleX(0); transform-origin: left; z-index: 60"></div>
+
+<!-- NAV -->
+<header class="az-header" style="position: sticky; top: 0; z-index: 50; background: #0D0C0A; border-bottom: 1px solid rgba(212,178,106,0.25)">
+<nav aria-label="Navigation principale" style="max-width: 1360px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; flex: 1 1 260px">
+<a href="carte.html" class="az-link" style="color: #ECE4D3">La carte</a>
+<a href="#maison" class="az-link" style="color: #ECE4D3">La maison</a>
+<a href="#infos" class="az-link" style="color: #ECE4D3">Infos</a>
+</div>
+<a href="#" class="az-logo" style="display: flex; flex-direction: column; align-items: center; gap: 2px; color: #ECE4D3; flex: 0 0 auto">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400; letter-spacing: 0.32em; padding-left: 0.32em; line-height: 1">AZULÌ</span>
+<span style="font-size: 9px; letter-spacing: 0.5em; color: #D4B26A; text-transform: uppercase; padding-left: 0.5em">Versailles</span>
+</a>
+<div style="display: flex; justify-content: flex-end; flex: 1 1 260px">
+<a href="reservation.html" class="az-outline-gold" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 26px; border: 1px solid #D4B26A; color: #D4B26A; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">Réserver</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section aria-label="Bienvenue" style="position: relative; min-height: 820px; display: flex; align-items: flex-end; background: radial-gradient(ellipse at 70% 35%, #3A2E1E 0%, #1A1610 45%, #0D0C0A 100%); overflow: hidden">
+<div class="az-parallax" style="position: absolute; top: -90px; left: 0; right: 0; bottom: 0; will-change: transform">
+<img class="az-hero-img" src="images/hero.jpg" alt="Dîner aux chandelles dans la salle d'Azulì" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%">
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,12,10,0.55) 0%, rgba(13,12,10,0.25) 35%, rgba(13,12,10,0.85) 78%, #0D0C0A 100%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,12,10,0.6) 0%, rgba(13,12,10,0) 60%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 28px; border: 1px solid rgba(212,178,106,0.35); pointer-events: none"></div>
+<div aria-hidden="true" style="position: absolute; inset: 36px; border: 1px solid rgba(212,178,106,0.15); pointer-events: none"></div>
+<div class="az-rise" style="position: relative; max-width: 1360px; width: 100%; margin: 0 auto; padding: 0 72px 110px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; gap: 16px; color: #D4B26A; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase">
+<span style="width: 48px; height: 1px; background: #D4B26A"></span>Cuisine méditerranéenne · Versailles
+</div>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(52px, 7vw, 104px); line-height: 0.95; letter-spacing: -0.01em">La lumière du Sud,<br><em style="color: #D4B26A; font-weight: 300">à l'ombre du Château.</em></h1>
+</div>
+<div style="display: flex; flex-direction: column; gap: 32px; max-width: 440px">
+<p style="margin: 0; font-size: 17px; line-height: 1.75; color: rgba(236,228,211,0.82)">À quelques pas des grilles dorées, Azulì marie le faste de Versailles à la générosité méditerranéenne : poissons de ligne, huile d'olive, agrumes et herbes du jardin, servis avec la rigueur d'une table gastronomique.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<a href="reservation.html" class="az-btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 34px; background: #D4B26A; color: #0D0C0A; font-size: 12px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase">Réserver une table</a>
+<a href="carte.html" class="az-ghost" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border: 1px solid rgba(236,228,211,0.4); color: #ECE4D3; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase">Voir la carte</a>
+</div>
+</div>
+</div>
+<a href="#maison" class="az-cue" aria-label="Défiler vers la suite" style="position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 0.4em; padding-left: 0.4em; text-transform: uppercase; color: rgba(236,228,211,0.7)">Défiler<span class="az-cue-line" style="display: block; width: 1px; height: 46px; background: rgba(212,178,106,0.25); position: relative; overflow: hidden"></span></a>
+</section>
+
+<!-- ORNEMENT -->
+<div aria-hidden="true" style="display: flex; align-items: center; justify-content: center; gap: 20px; padding: 72px 32px 0; color: #D4B26A">
+<span class="az-line az-line-l" style="flex: 0 1 220px; height: 1px; background: linear-gradient(90deg, transparent, #D4B26A)"></span>
+<svg class="az-reveal az-d1" width="64" height="40" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M32 4c-3 6-3 10 0 14 3-4 3-8 0-14Z"/><path d="M32 18c-6-2-11 0-13 5 5 2 10 0 13-5Zm0 0c6-2 11 0 13 5-5 2-10 0-13-5Z"/><path d="M32 18v18M26 30h12"/><path d="M19 23c-6 1-11 5-13 11M45 23c6 1 11 5 13 11"/><circle cx="6" cy="34" r="1.6"/><circle cx="58" cy="34" r="1.6"/></svg>
+<span class="az-line az-line-r" style="flex: 0 1 220px; height: 1px; background: linear-gradient(90deg, #D4B26A, transparent)"></span>
+</div>
+
+<!-- MAISON : grille éditoriale -->
+<section id="maison" aria-label="La maison" style="max-width: 1360px; margin: 0 auto; padding: 64px 32px 120px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 56px; align-items: start">
+<div class="az-reveal" style="display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 96px; line-height: 0.8; color: #D4B26A; font-weight: 300">N°I</span>
+<span style="font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(236,228,211,0.6)">La maison</span>
+</div>
+<div class="az-reveal az-d1" style="display: flex; flex-direction: column; gap: 28px; grid-column: span 1">
+<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 34px; line-height: 1.25; font-weight: 300">« Un dîner comme une promenade, du Grand Canal jusqu'aux rivages de la Méditerranée. »</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.85; color: rgba(236,228,211,0.75)">Le chef compose une cuisine de saison où les produits d'Île-de-France rencontrent ceux du Sud : légumes du Potager du Roi, poissons de petits bateaux, citrons de Menton. Une salle aux boiseries patinées, des miroirs anciens, et cette lumière dorée qui fait la signature de la maison.</p>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="az-frame az-curtain az-d2" style="aspect-ratio: 4 / 5; border: 1px solid rgba(212,178,106,0.45); padding: 8px; box-sizing: border-box">
+<div style="width: 100%; height: 100%; overflow: hidden">
+<img src="images/chef.jpg" alt="Le chef dressant une assiette en cuisine" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+</div>
+<figcaption style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(236,228,211,0.6)">En cuisine, chaque soir</figcaption>
+</figure>
+</section>
+
+<!-- BANDEAU DÉFILANT -->
+<div class="az-marquee" aria-hidden="true" style="overflow: hidden; border-top: 1px solid rgba(212,178,106,0.25); padding: 28px 0; white-space: nowrap">
+<div class="az-marquee-track" style="display: inline-flex; align-items: center; gap: 48px; padding-right: 48px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 34px; font-weight: 300; color: rgba(236,228,211,0.6)">
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Loup de ligne<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Citron de Menton<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Potager du Roi<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Huile d’olive de Ligurie<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Galerie des Glaces<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Thym sauvage<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Grand Canal<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Figues rôties<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Loup de ligne<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Citron de Menton<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Potager du Roi<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Huile d’olive de Ligurie<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Galerie des Glaces<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Thym sauvage<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Grand Canal<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+<span style="display: inline-flex; align-items: center; gap: 48px">Figues rôties<span style="font-style: normal; font-size: 16px; color: #D4B26A">✦</span></span>
+
+</div>
+</div>
+
+<!-- MENU -->
+<section id="menu" aria-label="Plats signatures" style="border-top: 1px solid rgba(212,178,106,0.25); border-bottom: 1px solid rgba(212,178,106,0.25); background: #12100D">
+<div style="max-width: 1360px; margin: 0 auto; padding: 120px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
+<div class="az-reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: #D4B26A">N°II — La carte</span>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(44px, 5.5vw, 76px); line-height: 1">Les Signatures</h2>
+</div>
+<p style="margin: 0; max-width: 380px; font-size: 15px; line-height: 1.8; color: rgba(236,228,211,0.7)">Trois assiettes qui racontent la maison. La carte complète évolue au fil des saisons et des arrivages.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 40px">
+
+<a href="carte.html" class="az-card az-reveal az-d1" style="display: flex; flex-direction: column; gap: 26px; color: #ECE4D3">
+<div class="az-media az-curtain az-d1" style="aspect-ratio: 3 / 4; border: 1px solid rgba(212,178,106,0.45); position: relative; overflow: hidden; background: #1A1610">
+<img src="images/loup.jpg" alt="Filet de poisson dressé sur légumes, verres de vin en arrière-plan" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,12,10,0.65) 0%, rgba(13,12,10,0) 30%)"></div>
+<span class="az-num" style="position: absolute; top: 18px; left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 44px; color: #D4B26A; line-height: 1; font-weight: 300">I</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(212,178,106,0.3); padding-bottom: 14px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 30px; line-height: 1.1">Loup de ligne, fenouil confit</h3>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #D4B26A; white-space: nowrap">[PRIX] €</span>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.75; color: rgba(236,228,211,0.72)">Loup de Méditerranée nacré, fenouil braisé à l’anis, émulsion aux agrumes et huile d’olive de Ligurie.</p>
+<span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(236,228,211,0.55)">Mer · Potager du Roi</span>
+</div>
+</a>
+
+<a href="carte.html" class="az-card az-reveal az-d2" style="display: flex; flex-direction: column; gap: 26px; color: #ECE4D3">
+<div class="az-media az-curtain az-d2" style="aspect-ratio: 3 / 4; border: 1px solid rgba(212,178,106,0.45); position: relative; overflow: hidden; background: #1A1610">
+<img src="images/agneau.jpg" alt="Viande rôtie tranchée, cuisson rosée" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% center; display: block">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,12,10,0.65) 0%, rgba(13,12,10,0) 30%)"></div>
+<span class="az-num" style="position: absolute; top: 18px; left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 44px; color: #D4B26A; line-height: 1; font-weight: 300">II</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(212,178,106,0.3); padding-bottom: 14px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 30px; line-height: 1.1">Agneau de Sisteron, panisse dorée</h3>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #D4B26A; white-space: nowrap">[PRIX] €</span>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.75; color: rgba(236,228,211,0.72)">Selle d’agneau rôtie au thym sauvage, panisse croustillante, jus réduit aux olives taggiasche.</p>
+<span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(236,228,211,0.55)">Terre · Provence</span>
+</div>
+</a>
+
+<a href="carte.html" class="az-card az-reveal az-d3" style="display: flex; flex-direction: column; gap: 26px; color: #ECE4D3">
+<div class="az-media az-curtain az-d3" style="aspect-ratio: 3 / 4; border: 1px solid rgba(212,178,106,0.45); position: relative; overflow: hidden; background: #1A1610">
+<img src="images/dessert.jpg" alt="Dessert nappé de caramel doré sur fond sombre" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,12,10,0.65) 0%, rgba(13,12,10,0) 30%)"></div>
+<span class="az-num" style="position: absolute; top: 18px; left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 44px; color: #D4B26A; line-height: 1; font-weight: 300">III</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(212,178,106,0.3); padding-bottom: 14px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 30px; line-height: 1.1">Citron de Menton à la feuille d’or</h3>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #D4B26A; white-space: nowrap">[PRIX] €</span>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.75; color: rgba(236,228,211,0.72)">Crémeux citron, sablé au beurre noisette, sorbet basilic et éclat de feuille d’or, clin d’œil aux grilles du Château.</p>
+<span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(236,228,211,0.55)">Dessert · Riviera</span>
+</div>
+</a>
+
+</div>
+
+<div style="display: flex; justify-content: center">
+<a href="carte.html" class="az-arrow" style="display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #D4B26A; border-bottom: 1px solid #D4B26A">Découvrir la carte complète
+<svg width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 5h20M16 1l4 4-4 4"/></svg></a>
+</div>
+</div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation" aria-label="Réservation" style="padding: 120px 32px; box-sizing: border-box">
+<div class="az-reveal" style="max-width: 980px; margin: 0 auto; border: 1px solid #D4B26A; outline: 1px solid rgba(212,178,106,0.3); outline-offset: 8px; padding: 80px 40px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center">
+<svg aria-hidden="true" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#D4B26A" stroke-width="1.1"><circle cx="20" cy="20" r="7"/><path d="M20 3v6M20 31v6M3 20h6M31 20h6M8 8l4 4M28 28l4 4M8 32l4-4M28 12l4-4"/></svg>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(38px, 4.5vw, 60px); line-height: 1.05">Une table vous attend<br><em style="color: #D4B26A">ce soir à Versailles.</em></h2>
+<p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 1.8; color: rgba(236,228,211,0.75)">Déjeuner, dîner ou salon privé pour vos occasions. Réservation conseillée, notamment le week-end.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px">
+<a href="reservation.html" class="az-btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 36px; background: #D4B26A; color: #0D0C0A; font-size: 12px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase">Réserver en ligne</a>
+<a href="#" class="az-ghost" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border: 1px solid rgba(236,228,211,0.4); color: #ECE4D3; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase">[Téléphone]</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="infos" style="background: #080807; border-top: 1px solid rgba(212,178,106,0.25)">
+<div style="max-width: 1360px; margin: 0 auto; padding: 88px 32px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 64px">
+<div class="az-reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; letter-spacing: 0.3em; line-height: 1">AZULÌ</span>
+<span style="font-size: 13px; line-height: 1.7; color: rgba(236,228,211,0.6)">Table méditerranéenne<br>au cœur de Versailles.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #D4B26A">Adresse</span>
+<address style="font-style: normal; font-size: 15px; line-height: 1.8; color: rgba(236,228,211,0.82)">[Numéro et rue]<br>78000 Versailles<br>[Téléphone]<br>[E-mail]</address>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #D4B26A">Horaires</span>
+<dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; column-gap: 20px; row-gap: 8px; font-size: 15px; line-height: 1.5; color: rgba(236,228,211,0.82)">
+<dt style="color: rgba(236,228,211,0.6)">Mar – Sam</dt><dd style="margin: 0">12h00 – 14h00</dd>
+<dt></dt><dd style="margin: 0">19h30 – 22h30</dd>
+<dt style="color: rgba(236,228,211,0.6)">Dimanche</dt><dd style="margin: 0">12h00 – 14h30</dd>
+<dt style="color: rgba(236,228,211,0.6)">Lundi</dt><dd style="margin: 0">Fermé</dd>
+</dl>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #D4B26A">Suivre</span>
+<a href="#" class="az-link" style="font-size: 15px; min-height: 28px; align-self: flex-start">Instagram</a>
+<a href="#" class="az-link" style="font-size: 15px; min-height: 28px; align-self: flex-start">Newsletter</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; border-top: 1px solid rgba(212,178,106,0.2); padding-top: 28px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(236,228,211,0.55)">
+<span>© 2026 Azulì</span>
+<span>Versailles · Méditerranée</span>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

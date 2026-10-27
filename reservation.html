@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réserver — Azulì</title>
+<meta name="description" content="Azulì, restaurant gastronomique méditerranéen à Versailles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0D0C0A}
+a{color:#D4B26A;text-decoration:none}a:hover{color:#EBD49B}
+.az-link{position:relative;transition:color .3s ease}
+.az-link::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:#D4B26A;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.az-link:hover{color:#D4B26A !important}
+.az-link:hover::after{transform:scaleX(1);transform-origin:left}
+.az-btn{transition:transform .35s ease,box-shadow .35s ease,background-color .35s ease}
+.az-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(212,178,106,.35);background-color:#E6CD92 !important}
+.az-ghost{transition:border-color .35s ease,color .35s ease,background-color .35s ease}
+.az-ghost:hover{border-color:#D4B26A !important;color:#D4B26A !important;background-color:rgba(212,178,106,.08) !important}
+.az-arrow svg{transition:transform .35s ease}
+.az-arrow:hover svg{transform:translateX(8px)}
+.az-logo span{transition:letter-spacing .6s cubic-bezier(.2,.7,.2,1),color .4s ease}
+.az-logo:hover span:first-child{letter-spacing:.4em !important;color:#D4B26A}
+.az-frame{transition:border-color .4s ease}
+.az-frame:hover{border-color:#D4B26A !important}
+.az-frame img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.az-frame:hover img{transform:scale(1.06)}
+.az-slot{transition:transform .25s ease,border-color .25s ease}
+.az-slot:hover{transform:translateY(-2px);border-color:#D4B26A !important}
+input,select,textarea{transition:border-color .3s ease}
+input:hover,select:hover,textarea:hover{border-color:#D4B26A !important}
+@keyframes azRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.az-rise{animation:azRise 1.2s .15s cubic-bezier(.2,.7,.2,1) both}
+.az-header{transition:background-color .5s ease}
+.az-header nav{transition:padding .5s cubic-bezier(.2,.7,.2,1)}
+.az-header.az-scrolled{background-color:rgba(13,12,10,.82) !important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.az-header.az-scrolled nav{padding-top:12px !important;padding-bottom:12px !important}
+.az-js .az-curtain{clip-path:inset(0 0 100% 0);transition:clip-path 1.5s .3s cubic-bezier(.7,0,.2,1),border-color .4s ease}
+.az-js .az-curtain.is-in{clip-path:inset(0 0 0 0)}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+input,select,textarea{font:inherit}
+input:focus,select:focus,textarea:focus{outline:1px solid #D4B26A;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="az-top" style="background: #0D0C0A; color: #ECE4D3; font-family: 'Jost', system-ui, sans-serif; font-weight: 300; width: 100%; min-width: 0">
+<div class="az-progress" aria-hidden="true" style="position: fixed; top: 0; left: 0; right: 0; height: 2px; background: #D4B26A; transform: scaleX(0); transform-origin: left; z-index: 60"></div>
+
+<header class="az-header" style="position: sticky; top: 0; z-index: 50; background: #0D0C0A; border-bottom: 1px solid rgba(212,178,106,0.25)">
+<nav aria-label="Navigation principale" style="max-width: 1360px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; flex: 1 1 260px">
+<a href="index.html" class="az-link" style="color: #ECE4D3">Accueil</a>
+<a href="carte.html" class="az-link" style="color: #ECE4D3">La carte</a>
+<a href="index.html#maison" class="az-link" style="color: #ECE4D3">La maison</a>
+</div>
+<a href="index.html" class="az-logo" style="display: flex; flex-direction: column; align-items: center; gap: 2px; color: #ECE4D3; flex: 0 0 auto">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400; letter-spacing: 0.32em; padding-left: 0.32em; line-height: 1">AZULÌ</span>
+<span style="font-size: 9px; letter-spacing: 0.5em; color: #D4B26A; text-transform: uppercase; padding-left: 0.5em">Versailles</span>
+</a>
+<div style="display: flex; justify-content: flex-end; flex: 1 1 260px">
+<a href="reservation.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 26px; background: #D4B26A; color: #0D0C0A; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">Réserver</a>
+</div>
+</nav>
+</header>
+
+<section aria-label="Réserver une table" class="az-rise" style="max-width: 1360px; margin: 0 auto; padding: 100px 32px 120px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 72px; align-items: start">
+
+<div style="display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: #D4B26A">Réservation</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(50px, 6vw, 88px); line-height: 0.95">Votre table<br><em style="color: #D4B26A">à Versailles.</em></h1>
+<p style="margin: 0; max-width: 440px; font-size: 16px; line-height: 1.8; color: rgba(236,228,211,0.75)">Réservez en ligne jusqu’à 8 convives. Pour un groupe ou le salon privé, appelez-nous directement.</p>
+<div style="display: flex; flex-direction: column; gap: 18px; border-top: 1px solid rgba(212,178,106,0.3); padding-top: 28px; font-size: 15px; line-height: 1.7">
+<div style="display: flex; gap: 20px"><span style="width: 110px; flex: 0 0 auto; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #D4B26A; padding-top: 4px">Adresse</span><span>[Numéro et rue]<br>78000 Versailles</span></div>
+<div style="display: flex; gap: 20px"><span style="width: 110px; flex: 0 0 auto; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #D4B26A; padding-top: 4px">Téléphone</span><span>[Téléphone]</span></div>
+<div style="display: flex; gap: 20px"><span style="width: 110px; flex: 0 0 auto; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #D4B26A; padding-top: 4px">Horaires</span><span>Mar – Sam · 12h–14h & 19h30–22h30<br>Dimanche · 12h–14h30 · Lundi fermé</span></div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="az-frame az-curtain" style="aspect-ratio: 16 / 10; border: 1px solid rgba(212,178,106,0.45); padding: 8px; box-sizing: border-box">
+<div style="width: 100%; height: 100%; overflow: hidden">
+<img src="images/terrasse.jpg" alt="Terrasse dressée face à la mer au coucher du soleil" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+</div>
+<figcaption style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(236,228,211,0.6)">L’esprit Méditerranée</figcaption>
+</figure>
+<a href="carte.html" class="az-arrow" style="display: inline-flex; align-items: center; gap: 14px; min-height: 44px; align-self: flex-start; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #D4B26A; border-bottom: 1px solid #D4B26A">Consulter la carte
+<svg width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 5h20M16 1l4 4-4 4"/></svg></a>
+</div>
+
+<div style="border: 1px solid #D4B26A; outline: 1px solid rgba(212,178,106,0.3); outline-offset: 8px; padding: 48px 40px; box-sizing: border-box; background: #12100D">
+
+<form id="az-form" style="display: flex; flex-direction: column; gap: 22px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 18px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(236,228,211,0.7)">Date
+<input type="date" required style="min-height: 48px; padding: 0 14px; background: transparent; border: 1px solid rgba(212,178,106,0.45); color: #ECE4D3; letter-spacing: normal; text-transform: none; color-scheme: dark"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(236,228,211,0.7)">Couverts
+<select style="min-height: 48px; padding: 0 14px; background: #12100D; border: 1px solid rgba(212,178,106,0.45); color: #ECE4D3; letter-spacing: normal; text-transform: none"><option>2 personnes</option><option>1 personne</option><option>3 personnes</option><option>4 personnes</option><option>5 personnes</option><option>6 personnes</option><option>7 personnes</option><option>8 personnes</option></select></label>
+</div>
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(236,228,211,0.7); margin-bottom: 10px">Horaire</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">12h00</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">12h30</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">13h00</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">13h30</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">19h30</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="true" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid #D4B26A; background: #D4B26A; color: #0D0C0A">20h00</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">20h30</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">21h00</button>
+
+<button type="button" class="az-slot" data-slot aria-pressed="false" style="min-height: 44px; min-width: 76px; padding: 0 14px; cursor: pointer; font-size: 14px; letter-spacing: 0.05em; border: 1px solid rgba(212,178,106,0.45); background: transparent; color: #ECE4D3">21h30</button>
+
+</div>
+</fieldset>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(236,228,211,0.7)">Nom
+<input type="text" required autocomplete="name" style="min-height: 48px; padding: 0 14px; background: transparent; border: 1px solid rgba(212,178,106,0.45); color: #ECE4D3; letter-spacing: normal; text-transform: none"></label>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 18px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(236,228,211,0.7)">E-mail
+<input type="email" required autocomplete="email" style="min-height: 48px; padding: 0 14px; background: transparent; border: 1px solid rgba(212,178,106,0.45); color: #ECE4D3; letter-spacing: normal; text-transform: none"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(236,228,211,0.7)">Téléphone
+<input type="tel" autocomplete="tel" style="min-height: 48px; padding: 0 14px; background: transparent; border: 1px solid rgba(212,178,106,0.45); color: #ECE4D3; letter-spacing: normal; text-transform: none"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(236,228,211,0.7)">Occasion, allergies, demandes
+<textarea rows="3" style="padding: 12px 14px; background: transparent; border: 1px solid rgba(212,178,106,0.45); color: #ECE4D3; letter-spacing: normal; text-transform: none; resize: vertical"></textarea></label>
+<button type="submit" class="az-btn" style="min-height: 54px; border: 0; background: #D4B26A; color: #0D0C0A; font-size: 12px; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; cursor: pointer">Confirmer la réservation</button>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: rgba(236,228,211,0.6)">Un e-mail de confirmation vous sera envoyé. Annulation gratuite jusqu’à 24 h avant.</p>
+</form>
+
+
+<div id="az-thanks" hidden style="display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; padding: 40px 0">
+<svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4B26A" stroke-width="1.2"><circle cx="24" cy="24" r="22"/><path d="M15 24.5l6 6 12-13"/></svg>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 44px; line-height: 1.05">Merci, à très vite.</h2>
+<p style="margin: 0; max-width: 360px; font-size: 15px; line-height: 1.8; color: rgba(236,228,211,0.75)">Votre demande pour <span id="az-slot-label">20h00</span> est enregistrée. Vous recevrez une confirmation par e-mail.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<a href="index.html" class="az-ghost" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border: 1px solid rgba(236,228,211,0.4); color: #ECE4D3; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">Retour à l’accueil</a>
+<a href="carte.html" class="az-btn" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; background: #D4B26A; color: #0D0C0A; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase">Voir la carte</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer style="background: #080807; border-top: 1px solid rgba(212,178,106,0.25)">
+<div style="max-width: 1360px; margin: 0 auto; padding: 56px 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px">
+<a href="index.html" style="font-family: 'Cormorant Garamond', serif; font-size: 32px; letter-spacing: 0.3em; color: #ECE4D3; line-height: 1">AZULÌ</a>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase">
+<a href="index.html" class="az-link">Accueil</a>
+<a href="carte.html" class="az-link">La carte</a>
+<a href="reservation.html" class="az-link">Réserver</a>
+</div>
+<span style="font-size: 12px; color: rgba(236,228,211,0.6)">[Adresse] · 78000 Versailles</span>
+</div>
+</footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>
